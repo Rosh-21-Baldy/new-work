@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 215 30% 25%;
+
+    --card: 220 33% 98%;
+    --card-foreground: 215 30% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 30% 25%;
+
+    --primary: 215 30% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 17 58% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 9% 80%;
+    --muted-foreground: 215 10% 55%;
+
+    --accent: 24 50% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 14% 85%;
+    --input: 220 14% 85%;
+    --ring: 215 30% 25%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles */
+.gradient-bg {
+  background: linear-gradient(135deg, #f4f5f8 0%, #e5f0f5 100%);
+}
+
+.ambak-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Custom button styles */
+.ambak-button-primary {
+  @apply bg-secondary text-white hover:bg-secondary/90 transition-all duration-200 rounded-md px-4 py-2 text-sm font-medium;
+}
+
+.ambak-button-secondary {
+  @apply bg-primary text-white hover:bg-primary/90 transition-all duration-200 rounded-md px-4 py-2 text-sm font-medium;
+}
+
+.ambak-button-outline {
+  @apply border border-primary text-primary hover:bg-primary/5 transition-all duration-200 rounded-md px-4 py-2 text-sm font-medium;
+}
+
+/* Custom form styles */
+.ambak-input {
+  @apply w-full rounded-md border border-border focus:border-primary focus:ring-1 focus:ring-primary;
+}
+
+/* Custom typography */
+.ambak-heading-1 {
+  @apply text-3xl md:text-4xl font-bold text-primary;
+}
+
+.ambak-heading-2 {
+  @apply text-2xl md:text-3xl font-bold text-primary;
+}
+
+.ambak-heading-3 {
+  @apply text-xl md:text-2xl font-bold text-primary;
+}
+
+.ambak-paragraph {
+  @apply text-base text-foreground leading-relaxed;
+}
+
+
