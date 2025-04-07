@@ -7,17 +7,17 @@ const ProcessSection = () => {
       <div className="ambak-container">
         <div className="text-center mb-14">
           <h2 className="text-success text-2xl md:text-3xl font-bold mb-4">
-          At Prefinn, we succeed together.
+          Support. Collaboration. Success. That's the Prefinn Way
           </h2>
           <h3 className="text-Primary text-xl font-semibold">#Prefinn Loans</h3>
           <h3 className="text-success text-xl font-medium mt-1">
             {/* Happiness Delivered, Always */}
-            Fast, Secure, and Paperless – Your Loan is Just a Click Away
+             Your Loan is Just a Click Away
           </h3>
           <div className="mt-6">
             <Link
               href="/offer"
-              className="inline-block bg-secondary text-white py-2 px-6 rounded-md font-medium hover:bg-secondary/90 transition-colors"
+              className=" text-decoration-none inline-block bg-success text-white py-2 px-6 rounded-md font-medium hover:bg-secondary/90 transition-colors"
             >
               Apply Now
             </Link>
@@ -25,10 +25,10 @@ const ProcessSection = () => {
         </div>
 
         <div className="mb-14">
-          <h2 className="text-center text-2xl font-bold text-primary mb-10">
+          {/* <h2 className="text-center text-2xl font-bold text-primary mb-10"> */}
           {/* Apply Online, Get Approved Instantly – Ghar Baithe, Loan Taiyar! */}
-          Your Happiness, Our Promise!
-          </h2>
+          {/* Your Happiness, Our Promise!
+          </h2> */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="relative">
@@ -48,8 +48,8 @@ const ProcessSection = () => {
                 <h3 className="text-primary font-semibold text-lg mb-3">
                   Complete application in Seconds
                 </h3>
-                <p className="text-muted-foreground text-sm">
-                  Need help? Discuss your Requirement with Prefinn Team.
+                <p className="text-muted-foreground text-sm  d-flex justify-content-center">
+                  Need help? Discuss your Requirement with Finance Partner 
                 </p>
               </div>
             </div>
@@ -61,18 +61,23 @@ const ProcessSection = () => {
                 </div>
                 <div className="mb-4">
                   <Image
-                    src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-626.jpg?t=st=1743016254~exp=1743019854~hmac=9fd30bb29c75e8e1c6b033cd350054252e1a6838ed7af3ac3d789263c550e65c&w=1380"
-                    alt="Track your application live"
+                    src="https://cdn-icons-png.flaticon.com/256/4593/4593624.png"
+                    alt="Complete the application in minutes"
+                    // alt="Track your application live"
                     width={240}
                     height={180}
                     className="w-full h-auto"
                   />
                 </div>
-                <h3 className="text-primary font-semibold text-lg mb-2">
+                <h3 className="text-primary font-semibold text-lg mb-2 d-flex justify-content-center">
+                 
                   Stay With Us
+                  
                 </h3>
-                <p className="text-muted-foreground text-sm">
-                  Choose your own bank & Applied for it
+                <p className="text-muted-foreground text-sm  d-flex justify-content-center">
+                
+                 Choose your own finance Partner
+                 
                 </p>
               </div>
             </div>
@@ -91,12 +96,12 @@ const ProcessSection = () => {
                     className="w-full h-auto"
                   />
                 </div>
-                <h3 className="text-primary font-semibold text-lg mb-2">
-                  Disbursement Day
+                <h3 className="text-primary font-semibold text-lg mb-2 d-flex justify-content-center">
+                sanction's
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  Our tech ensures smooth processing, making disbursement quick
-                  and easy.
+                  Our fintech platform ensures full compliance with global regulatory frameworks
+                  
                 </p>
               </div>
             </div>

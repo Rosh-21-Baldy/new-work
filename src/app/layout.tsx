@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Home Loan - Best Rates & Offers from 35+ Lenders | Ambak Home Loans",
+  title: "Prefinn Fintech & Solution",
   description:
-    "Compare home loans, balance transfers, or loans against property from 35+ banks with Ambak. Instantly calculate EMI and apply online.",
+    "Compare home loans, balance transfers, or loans against property from  banks with Prefinn.",
 };
 
 export default function RootLayout({

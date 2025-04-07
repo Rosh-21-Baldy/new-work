@@ -1,287 +1,336 @@
-"use client";
-import React, { useState } from "react";
-import { Form, Button, Card, Container, Row, Col } from "react-bootstrap";
-import { FaPaperPlane } from "react-icons/fa";
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-function PartnerEnquiry() {
-  const [openFAQ, setOpenFAQ] = useState(null);
-  const [email, setEmail] = useState("");
-
-
-  // Function to toggle FAQs
-  const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index? null : index);
-  };
-  return (
-    <>
-      <Navbar />
-      {/* Banner Section */}
-      <div
-        className="text-center text-dark py-5"
-        style={{
-          background:
-            "url('https://burst.shopifycdn.com/photos/business-meeting-over-coffee.jpg?width=1000&format=pjpg&exif=0&iptc=0') center/cover",
-        }}
-      >
-        <h1 className="fw-bold text-dark">Partner Enquiry</h1>
-      </div>
-
-      {/* Form Section */}
-      <Container className="mt-7">
-        <h2 className="text-center fw-bold">
-          Become a <span className="text-primary">Partner</span>
-        </h2>
-
-        <Form className="mt-4">
-          <Row className="g-3">
-            {/* First Row */}
-            <Col md={4}>
-              <Form.Control
-                type="text"
-                placeholder="Full Name"
-                className="rounded-pill"
-              />
-            </Col>
-            <Col md={4}>
-              <Form.Control
-                type="email"
-                placeholder="Email"
-                className="rounded-pill"
-              />
-            </Col>
-            <Col md={4}>
-              <Form.Control
-                type="tel"
-                placeholder="Mobile Number"
-                className="rounded-pill"
-              />
-            </Col>
-
-            {/* Second Row */}
-            <Col md={4}>
-              <Form.Control
-                type="text"
-                placeholder="City"
-                className="rounded-pill"
-              />
-            </Col>
-            <Col md={4}>
-              <Form.Control
-                type="text"
-                placeholder="State"
-                className="rounded-pill"
-              />
-            </Col>
-            <Col md={4}>
-              <Form.Control
-                type="text"
-                placeholder="Profession"
-                className="rounded-pill"
-              />
-            </Col>
-
-            {/* Submit Button */}
-            <Col md={12} className="text-center mt-3">
-              <Button variant="primary" className="rounded-pill px-4">
-                SEND NOW
-              </Button>
-            </Col>
-          </Row>
-        </Form>
-      </Container>
-
-      <Container className="mt-10">
-        <h2 className="fw-bold">Loan Partners FAQ</h2>
-        <p className="text-blue-900">
-          Answers to common questions about Loan Requirements.
-        </p>
-        <Row>
-          <Col md={6}>
-            <Card className="mb-5 shadow-sm">
-              <Card.Header
-                onClick={() => toggleFAQ(1)}
-                className="fw-bold cursor-pointer"
-              >
-                1. Who can partner with Prefinn?
-              </Card.Header>
-              {openFAQ === 1 && (
-                <Card.Body>
-                 <li>Anyone from loan agents, ex-bankers, financial analysts, Insurance agents, mutual fund agents, chartered accountants, builders, or professionals from any other field can become an Independent Business Owner by partnering with Prefinn.</li>
-                </Card.Body>
-              )}
-            </Card>
-            <Card className="mb-5 shadow-sm">
-              <Card.Header
-                onClick={() => toggleFAQ(2)}
-                className="fw-bold cursor-pointer"
-              >
-                2. Is there any charge for joining as a partner with Prefinn?
-              </Card.Header>
-              {openFAQ === 2 && (
-                <Card.Body>
-                  <li>No, joining Prefinn as a partner is completely free of charge.</li>
-                </Card.Body>
-              )}
-            </Card>
-
-            {/* FAQ Item 3 */}
-            <Card className="mb-5 shadow-sm">
-              <Card.Header
-                onClick={() => toggleFAQ(3)}
-                className="fw-bold cursor-pointer"
-              >
-                3. How to become a partner with Prefinn?
-              </Card.Header>
-              {openFAQ === 3 && (
-                <Card.Body>
-                 <li> Visit the Prefinn website and click on the ‘Become a Partner’ option.</li>
-                 <li> Complete the registration form by fillng in your details and submitting it.</li>
-                 <li> A member of the Prefinn support team will contact you to guide you through the next steps and arrange a meeting.</li>
-                 <li> During the meeting, a Prefinn Manager will explain the lead generation process and provide you with all the necessary information</li>
-                 <li> Once you understand and are comfortable with the processes, an agreement will be signed between you and Prefinn.</li>
-                </Card.Body>
-              )}
-            </Card>
-          </Col>
-          <Col md={6}>
-            {/* FAQ Item 4 */}
-            <Card className="mb-5 shadow-sm">
-              <Card.Header onClick={() => toggleFAQ(4)} className="fw-bold cursor-pointer">
-                4. What documents are required for becoming a partner?
-              </Card.Header>
-              {openFAQ === 4 && <Card.Body><li>Basic KYC documents such as PAN, Aadhar, and bank details are required for verification.</li></Card.Body>}
-            </Card>
-
-            {/* FAQ Item 5 */}
-            <Card className="mb-5 shadow-sm">
-              <Card.Header onClick={() => toggleFAQ(5)} className="fw-bold cursor-pointer">
-                5. How do partners earn with Prefinn?
-              </Card.Header>
-              {openFAQ === 5 && <Card.Body><li>Partners earn commissions for every successful loan they facilitate through Prefinn.</li></Card.Body>}
-            </Card>
-
-            {/* FAQ Item 6 */}
-            <Card className="mb-5 shadow-sm">
-              <Card.Header onClick={() => toggleFAQ(6)} className="fw-bold cursor-pointer">
-                6. What support does Prefinn provide to its partners?
-              </Card.Header>
-              {openFAQ === 6 && <Card.Body><li>Comprehensive Training: We provide detailed training sessions to help you understand our products, processes, and the market.</li>
-              <li>Marketing Support: You can get leads, marketing materials, and strategies from Prefinn to promote your services effectively</li>
-              <li>Timely Payouts: We ensure that you receive your commissions on time, providing a smooth and transparent payout process</li>
-              <li>By partnering with Prefinn, you get all the support you need to grow and succeed as a partner.</li>
-              </Card.Body>}
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-
-      
-      <Footer/>
-    </>
-  );
-}
-
-export default PartnerEnquiry;
-
-
-
-
-
 // "use client";
 // import React, { useState } from "react";
-// import { Form, Button, Card, Container, Row, Col } from "react-bootstrap";
-// import { FaPaperPlane } from "react-icons/fa";
+// import { Form, Button, Card, Container, Row, Col, Alert } from "react-bootstrap";
 // import Footer from "@/components/footer";
 // import Navbar from "@/components/navbar";
 // import "bootstrap/dist/css/bootstrap.min.css";
+// import Link from "next/link";
 
-// function PartnerEnquiry() {
-//   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-//   const [email, setEmail] = useState("");
+// const LoanEnquiry = () => {
+//   const [formData, setFormData] = useState({
+//     fullName: "",
+//     email: "",
+//     mobile: "",
+//     loanType: "",
+//     amount: "",
+//     city: "",
+//     state: "",
+//     pinCode: "",
+//   });
 
-//   // Function to toggle FAQs
-//   const toggleFAQ = (index: number) => {
-//     setOpenFAQ(openFAQ === index ? null : index);
+//   const [showError, setShowError] = useState(false); // For validation message
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+
+//     // Hide error message when user starts filling fields
+//     if (showError) setShowError(false);
 //   };
+
+//   const handleNextClick = (e) => {
+//     if (!isFormValid) {
+//       e.preventDefault(); // Prevent redirection if form is incomplete
+//       setShowError(true); // Show error message
+//     }
+//   };
+
+//   // Check if all fields are filled
+//   const isFormValid = Object.values(formData).every((field) => field.trim() !== "");
 
 //   return (
 //     <>
 //       <Navbar />
-//       {/* Banner Section */}
-//       <div
-//         className="text-center text-dark py-5"
-//         style={{
-//           background:
-//             "url('https://media.tacdn.com/media/attractions-splice-spp-674x446/09/1f/f7/af.jpg') center/cover",
-//         }}
-//       >
-//         <h1 className="fw-bold text-white">Partner Enquiry</h1>
-//       </div>
-
-//       {/* Form Section */}
-//       <Container className="mt-7">
-//         <h2 className="text-center fw-bold">
-//           Become a <span className="text-primary">Partner</span>
-//         </h2>
-
-//         <Form className="mt-4">
-//           <Row className="g-3">
-//             {/* First Row */}
-//             <Col md={4}>
-//               <Form.Control type="text" placeholder="Full Name" className="rounded-pill" />
-//             </Col>
-//             <Col md={4}>
-//               <Form.Control type="email" placeholder="Email" className="rounded-pill" />
-//             </Col>
-//             <Col md={4}>
-//               <Form.Control type="tel" placeholder="Mobile Number" className="rounded-pill" />
-//             </Col>
-
-//             {/* Second Row */}
-//             <Col md={4}>
-//               <Form.Control type="text" placeholder="City" className="rounded-pill" />
-//             </Col>
-//             <Col md={4}>
-//               <Form.Control type="text" placeholder="State" className="rounded-pill" />
-//             </Col>
-//             <Col md={4}>
-//               <Form.Control type="text" placeholder="Profession" className="rounded-pill" />
-//             </Col>
-
-//             {/* Submit Button */}
-//             <Col md={12} className="text-center mt-3">
-//               <Button variant="primary" className="rounded-pill px-4">
-//                 SEND NOW
-//               </Button>
-//             </Col>
-//           </Row>
-//         </Form>
-//       </Container>
-
-//       <Container className="mt-5">
-//         <h2 className="fw-bold">Loan Partners FAQ</h2>
-//         <p className="text-muted">Answers to common questions about Loan Requirements.</p>
+//       <Container className="my-5">
 //         <Row>
-//           {[...Array(6)].map((_, index) => (
-//             <Col md={6} key={index}>
-//               <Card className="mb-2 shadow-sm">
-//                 <Card.Header onClick={() => toggleFAQ(index + 1)} className="fw-bold cursor-pointer">
-//                   {index + 1}. Sample FAQ Question {index + 1}
-//                 </Card.Header>
-//                 {openFAQ === index + 1 && <Card.Body>Sample answer for question {index + 1}.</Card.Body>}
-//               </Card>
-//             </Col>
-//           ))}
+//           <Col md={6}>
+//             <h2 className="mb-4">
+//               Register as Channel <span className="fw-bold text-primary">Partner</span>
+//             </h2>
+//             {showError && <Alert variant="danger">⚠ Please fill all fields to proceed.</Alert>}
+//             <Form>
+//               <Row>
+//                 <Col md={6} className="mb-3">
+//                   <Form.Control
+//                     type="text"
+//                     placeholder="Full Name"
+//                     name="fullName"
+//                     value={formData.fullName}
+//                     onChange={handleChange}
+//                     required
+//                   />
+//                 </Col>
+//                 <Col md={6} className="mb-3">
+//                   <Form.Control
+//                     type="email"
+//                     placeholder="Email"
+//                     name="email"
+//                     value={formData.email}
+//                     onChange={handleChange}
+//                     required
+//                   />
+//                 </Col>
+//                 <Col md={6} className="mb-3">
+//                   <Form.Control
+//                     type="text"
+//                     placeholder="Mobile Number"
+//                     name="mobile"
+//                     value={formData.mobile}
+//                     onChange={handleChange}
+//                     required
+//                   />
+//                 </Col>
+//                 <Col md={6} className="mb-3">
+//                   <Form.Select
+//                     name="loanType"
+//                     value={formData.loanType}
+//                     onChange={handleChange}
+//                     required
+//                   >
+//                     <option value="">Loan Type</option>
+//                     <option value="Personal Loan">Personal Loan</option>
+//                     <option value="Home Loan">Home Loan</option>
+//                     <option value="Car Loan">Car Loan</option>
+//                   </Form.Select>
+//                 </Col>
+//                 <Col md={6} className="mb-3">
+//                   <Form.Control
+//                     type="text"
+//                     placeholder="Amount"
+//                     name="amount"
+//                     value={formData.amount}
+//                     onChange={handleChange}
+//                     required
+//                   />
+//                 </Col>
+//                 <Col md={6} className="mb-3">
+//                   <Form.Control
+//                     type="text"
+//                     placeholder="City"
+//                     name="city"
+//                     value={formData.city}
+//                     onChange={handleChange}
+//                     required
+//                   />
+//                 </Col>
+//                 <Col md={6} className="mb-3">
+//                   <Form.Control
+//                     type="text"
+//                     placeholder="State"
+//                     name="state"
+//                     value={formData.state}
+//                     onChange={handleChange}
+//                     required
+//                   />
+//                 </Col>
+//                 <Col md={6} className="mb-3">
+//                   <Form.Control
+//                     type="text"
+//                     placeholder="Pin Code"
+//                     name="pinCode"
+//                     value={formData.pinCode}
+//                     onChange={handleChange}
+//                     required
+//                   />
+//                 </Col>
+//               </Row>
+
+//               <Link href={isFormValid ? "/bank-details" : "#"} passHref>
+//                 <Button
+//                   variant="primary"
+//                   className="w-100"
+//                   onClick={handleNextClick}
+//                 >
+//                   NEXT
+//                 </Button>
+//               </Link>
+//             </Form>
+//           </Col>
+
+//           <Col md={6}>
+//             <h3 className="mb-4 text-center">
+//               How to apply for a loan with Prefinn?
+//             </h3>
+//             <Row>
+//               {[
+//                 "Fill out the online Apply Loan form on website and provide your Basic details..Call Prefinn Team or wait for Call Back.",
+//                 "While Discussing with Prefinn Team, select the Bank/NBFC of your Choice for your Loan requirements and provide the required ",
+//                 "Once Your Loan Application is filed. Have a personal discussion with Bank Loan Manager and finalise the Loan Amount and Terms and conditions.",
+//                 "Meet the Loan Manager in person, sign the original Loan Application file and take Disbursement of Loan Amount in your preferred Bank Account.",
+//               ].map((text, index) => (
+//                 <Col md={6} key={index} className="mb-3">
+//                   <Card className="text-center p-3" style={{ minHeight: "200px" }}>
+//                     <Card.Body>
+//                       <div className="fs-4 fw-bold text-primary mb-2">{index + 1}</div>
+//                       <Card.Text>{text}</Card.Text>
+//                     </Card.Body>
+//                   </Card>
+//                 </Col>
+//               ))}
+//             </Row>
+//           </Col>
 //         </Row>
 //       </Container>
 
 //       <Footer />
 //     </>
 //   );
-// }
+// };
 
-// export default PartnerEnquiry;
+// export default LoanEnquiry;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"use client";
+import React, { useState } from "react";
+import { Form, Button, Card, Container, Row, Col, Modal } from "react-bootstrap";
+import { FaPaperPlane } from "react-icons/fa";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const LoanEnquiry = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setShowModal(true);
+  };
+  
+
+  return (
+    <>
+      <Navbar />
+      <Container className="my-5">
+        <Row>
+          {/* Left Side - Loan Enquiry Form */}
+          <Col md={6}>
+            <h2 className="mb-4">
+              Register As Channel <span className="fw-bold text-primary">Partner</span>
+            </h2>
+            <Form onSubmit={handleSubmit}>
+              <Row>
+                <Col md={6} className="mb-3">
+                  <Form.Control type="text" placeholder="Full Name" required />
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Control type="email" placeholder="Email" required />
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Control type="text" placeholder="Mobile Number" required />
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Select required>
+                    <option value="">Select Loan Type</option>
+                    <option>Personal Loan</option>
+                    <option>Home Loan</option>
+                    <option>Car Loan</option>
+                  </Form.Select>
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Control type="number" placeholder="Amount" required />
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Control type="text" placeholder="City" required />
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Control type="text" placeholder="State" required />
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Control type="text" placeholder="Pin Code" required />
+                </Col>
+              </Row>
+              <Button variant="primary" className="w-100" type="submit">
+                SEND NOW
+              </Button>
+            </Form>
+          </Col>
+
+          {/* Right Side - Loan Process Steps */}
+          <Col md={6}>
+            <h3 className="mb-4 text-center">How to apply for a loan with Prefinn?</h3>
+            <Row>
+              {[
+                "Fill out the online Apply Loan form on website and provide your basic details. Call Prefinn Team or wait for a callback.",
+                "While discussing with Prefinn Team, select the Bank/NBFC of your choice for loan requirements and provide the required documents to our Loan Executive.",
+                "Once your loan application is filed, have a personal discussion with the Bank Loan Manager and finalize the Loan Amount and Terms & Conditions.",
+                "Meet the Loan Manager in person, sign the original Loan Application file, and take disbursement of the loan amount in your preferred Bank Account.",
+              ].map((text, index) => (
+                <Col md={6} key={index} className="mb-3">
+                  <Card className="text-center p-3" style={{ minHeight: "200px" }}>
+                    <Card.Body>
+                      <div className="fs-4 fw-bold text-primary mb-2">{index + 1}</div>
+                      <Card.Text>{text}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Success Modal */}
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Success!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Your loan enquiry has been submitted successfully.</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Footer />
+    </>
+  );
+};
+
+export default LoanEnquiry;
+
+
+
+
+
+
+
+
+
+
 

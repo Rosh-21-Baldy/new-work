@@ -1,14 +1,14 @@
 .prefinn-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 2rem auto;
-    padding: 2rem;
-    background: #1679db;
+    /* padding: 2rem; */
+    /* background: #1679db; */
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   }
   
   .form-wrapper {
-    background: hwb(180 97% 2%);
+    /* background: hwb(180 97% 2%); */
     padding: 2rem;
     border-radius: 8px;
   }
@@ -79,4 +79,34 @@
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+  }
+
+
+  .icon-circle {
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+  }
+
+  .social-icon {
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    color: #f8f9fa; /* Light hover effect */
+  }
+  .top-bar {
+    background-color: #0057ff; 
+    /* ye option hai colour ka abhi  */
+    /* background-color: #0000FF;  */
+
+    color: white;
+    font-size: 14px; 
   }

@@ -139,32 +139,6 @@
 
 // export default PartnerSection;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 
 import { GiPiggyBank } from "react-icons/gi";
@@ -175,46 +149,61 @@ import { GiDecapitation } from "react-icons/gi";
 import { Container, Row, Col, Card, Button, Image } from "react-bootstrap";
 import Marquee from "react-fast-marquee";
 import { Separator } from "@/components/ui/separator";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 const PartnerSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  ("");
 
   const loanProducts = [
     {
       title: "Home Loans",
-      description: "Prefinn helps clients assess their home financing needs by partnering with experienced consultants.",
+      link: "homeloans",
+      description:
+        "Prefinn helps clients assess their home financing needs by partnering with experienced consultants.",
       icon: <CiBank />,
-      image: "https://cdni.iconscout.com/illustration/premium/thumb/home-loan-emi-payment-illustration-download-in-svg-png-gif-file-formats--house-mortgage-business-and-finance-pack-professionals-illustrations-3916183.png?f=webp",
-
+      image:
+        "https://img.freepik.com/premium-photo/focused-indian-young-couple-accounting-calculating-bills-discussing-planning-budget-together-using-online-banking-services-calculator-checking-finances_466689-9010.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid",
     },
+    
     {
       title: "Personal Loans",
-      description: "Prefinn offers Personal Loans, including unsecured loans and overdraft facilities.",
+      link: "personalloans",
+      description:
+        "Prefinn offers Personal Loans, including unsecured loans and overdraft facilities.",
       icon: <GiPiggyBank />,
-      image: "https://cdni.iconscout.com/illustration/premium/thumb/man-getting-loan-via-mobile-app-illustration-download-in-svg-png-gif-file-formats--online-approval-approve-e-payment-pack-business-illustrations-4832206.png?f=webp",
-
+      image:
+        "https://img.freepik.com/premium-photo/indian-couple-with-piggy-bank-standing-isolated-white-background_466689-40470.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid",
     },
     {
       title: "Business Loans",
-      description: "Prefinn offers Business Loan services to help businesses assess their short-term financing needs.",
-      icon: <TbBuildingBank />,
-      image: "https://img.freepik.com/free-vector/premium-cash-reward-bonus-work-done-best-employee-rewarding-promotion-order-efficiency-stimulation-boss-subordinate-cartoon-characters_335657-2984.jpg",
+      link: "businessloans",
 
+      description:
+        "Prefinn offers Business Loan services to help businesses assess their short-term financing needs.",
+      icon: <TbBuildingBank />,
+      image:
+        "https://img.freepik.com/free-photo/happy-businessman-with-green-arrow_329181-9118.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid",
     },
     {
       title: "Loan Against Property (LAP)",
-      description: "Prefinn’s finance experts help secure a Loan Against Property (LAP) from top banks.",
-      icon: <FaHouseLaptop />,
-      image: "https://img.freepik.com/premium-vector/bank-building_773186-1504.jpg",
+      link: "loanagainstproperty",
 
+      description:
+        "Prefinn’s finance experts help secure a Loan Against Property (LAP) from top banks.",
+      icon: <FaHouseLaptop />,
+      image:
+        "https://img.freepik.com/premium-photo/happy-lady-with-house-toy-indian-notes_658385-1124.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid",
     },
     {
       title: "Working Capital Loans",
-      description: "Expert financial solutions to maintain smooth business operations.",
-      icon:<GiDecapitation />,
-      image: "https://img.freepik.com/free-vector/businessman-finance-manager-working-laptop-crisis-manager-stock-market-trader-business-analytics-concept-vector-illustration_596401-534.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid",
+      link: "workingCapitalloans",
 
+      description:
+        "Expert financial solutions to maintain smooth business operations.",
+      icon: <GiDecapitation />,
+      image:
+        "https://img.freepik.com/premium-photo/confident-businessman-portrait_220507-11781.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid",
     },
   ];
 
@@ -222,7 +211,7 @@ const PartnerSection = () => {
     {
       name: "SBI",
       link: "/loan/sbi-home-loan",
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/58/State_Bank_of_India_logo.svg/159px-State_Bank_of_India_logo.svg.png?20180321064323",  
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/58/State_Bank_of_India_logo.svg/159px-State_Bank_of_India_logo.svg.png?20180321064323",
     },
     {
       name: "Axis",
@@ -259,7 +248,7 @@ const PartnerSection = () => {
       link: "/loan/iifl-home-loan",
       logo: "https://storage.googleapis.com/iifl-storage/files/images/logos/iifl-finance.svg",
     },
-    
+
     {
       name: "BOI (Bank of India)",
       link: "/loan/boi-home-loan",
@@ -292,83 +281,93 @@ const PartnerSection = () => {
     },
   ];
   return (
-    <div className="bg-white py-5">
+    <div className="bg-white py-1">
       <Container>
-      <div className="text-center mt-5">
+        <div className="text-center mt-5">
           <h2 className="fw-semibold">
-            Our <span className="text-success">Loan</span> Products
+            Our <span className="text-success">Loan Products</span>
           </h2>
         </div>
         <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
-  {loanProducts.map((product, index) => (
-    <Card
-      key={index}
-      className="text-center p-4 shadow-sm loan-card"
-      onMouseEnter={() => setHoveredIndex(index)}
-      onMouseLeave={() => setHoveredIndex(null)}
-      style={{
-        width: "210px", // Fixed width
-        height: "280px", // Fixed height
-        background: "#fff",
-        color: hoveredIndex === index ? "#fff" : "#000",
-        transition: "all 0.3s ease-in-out",
-        position: "relative",
-        overflow: "hidden",
-        flex: "0 0 auto", // Ensures cards don't shrink
-      }}
-    >
-      {/* Show title, description, and icon when NOT hovered */}
-      {hoveredIndex !== index && (
-        <>
-          <div className="fs-1">{product.icon}</div>
-          <h5 className="fw-bold">{product.title}</h5>
-          <p>{product.description}</p>
-        </>
-      )}
-
-      {/* Show background image & Learn More button on hover */}
-      {hoveredIndex == index && (
-        <>
-          <div className="fs-1">{product.icon}</div>
-          <div
-            className="loan-hover-image"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundImage: `url(${product.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              opacity: 1,
-              zIndex: 1,
-            }}
-          />
-          <div
-          style={{
-            position: "absolute",
-            bottom: "15px", // Adjust distance from the bottom
-            left: "50%",
-            transform: "translateX(-50%)", // Center horizontally
-            zIndex: 2,
-          }}
-          
+          {loanProducts.map((product, index) => (
+            <a 
+            key={index} 
+            href={product.link} 
+            style={{ textDecoration: "none" }}
           >
-            <Button variant="outline-dark" size="sm">
-              Apply Now
-            </Button>
+            <Card
+              key={index}
+              className="text-center p-4 shadow-sm loan-card"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              style={{
+                width: "210px", // Fixed width
+                height: "280px", // Fixed height
+                background: hoveredIndex === index ? `url(${product.image})` : "#fff",
+                color: hoveredIndex === index ? "#fff" : "#000",
+                transition: "all 0.3s ease-in-out",
+                position: "relative",
+                overflow: "hidden",
+                flex: "0 0 auto", // Ensures cards don't shrink
+              }}
+            >
+              {/* Show title, description, and icon when NOT hovered */}
+              {hoveredIndex !== index && (
+                <>
+                  <div className="fs-1 d-flex justify-content-center">
+                    {product.icon}
+                  </div>
+                  <h5 className="fw-bold">{product.title}</h5>
+                  <p>{product.description}</p>
+                </>
+              )}
+
+              {/* Show background image & Learn More button on hover */}
+              {hoveredIndex == index && (
+                <>
+                  <div className="fs-1">{product.icon}</div>
+                  <div
+                     className="loan-hover-image"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      backgroundImage: `url(${product.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      opacity: 1,
+                      zIndex: 1,
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "15px", // Adjust distance from the bottom
+                      left: "50%",
+                      transform: "translateX(-50%)", // Center horizontally
+                      zIndex: 2,
+                    }}
+                  >
+                    {/* <a
+                      href={`/${product.link}`}
+                      className="btn btn-outline-light btn-sm"
+                    >
+                      Apply Now
+                    </a> */}
 
 
-          </div>
-        </>
-      )}
-    </Card>
-  ))}
-</div>
+                  </div>
+                </>
+              )}
+            </Card>
+            </a>
+          ))}
+        </div>
 
- {/* Separator */}
- <Separator className="my-4" />
+        {/* Separator */}
+        <Separator className="my-10" />
 
         {/* Section Title */}
         <div className="text-center mb-6">
@@ -388,7 +387,7 @@ const PartnerSection = () => {
             <Col key={index} xs={6} md={3} className="mb-3">
               <Card className="text-center shadow-sm p-3">
                 <div className="fs-3">{item.icon}</div>
-                <h4 className="fw-bold text-primary">{item.value}</h4> 
+                <h4 className="fw-bold text-primary">{item.value}</h4>
                 <p className="text-muted">{item.text}</p>
               </Card>
             </Col>
@@ -413,16 +412,9 @@ const PartnerSection = () => {
             </a>
           ))}
         </Marquee>
-
       </Container>
     </div>
   );
 };
 
 export default PartnerSection;
-
-
-
-
-
-

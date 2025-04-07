@@ -72,14 +72,14 @@ export default function EMICalculator() {
       <Row className="align-items-center">
         {/* Left Column - Title & Button */}
         <Col md={8} className="text-md-start text-center">
-          <h2 className="fw-bold text-dark">Loan EMI Calculator</h2>
-          <Button variant="outline-dark" className="mt-3">
+          <h2 className="fw-bold text-dark d-flex justify-content-center">Loan EMI Calculator</h2>
+          {/* <Button variant="outline-dark" className="mt-3">
             Unlock Offers Now <span className="ms-2">→</span>
-          </Button>
+          </Button> */}
         </Col>
 
         {/* Right Column - Description */}
-        <Col md={7} className="text-md-start text-center mt-4 mt-md-0">
+        <Col md={7} className="text-md-start text-center mt-4 mt-md-0 mb-4 ">
           <p className="text-muted">
             An EMI Calculator is your gateway to understanding the world of Equated 
             Monthly Instalments (EMIs) and making informed decisions about your home 

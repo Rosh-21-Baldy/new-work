@@ -98,6 +98,7 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/f
 import { FaXTwitter } from "react-icons/fa6";
 import { MdCall, MdEmail, MdLocationOn } from "react-icons/md";
 import Navbar from '@/components/navbar';
+import { FaLinkedin } from 'react-icons/fa';
 
 export default function AboutUs() {
   return (<>
@@ -150,15 +151,16 @@ export default function AboutUs() {
           {[
             // { name: "Rajesh Upadhyay", role: "Founder & CEO", image: "https://www.prefinn.com/_next/static/media/founder.769f88bb.jpg", linkedin: "https://www.linkedin.com/in/rajeshupadhyay333/" },
             { name: "Rajesh Upadhyay", role: "Founder & CEO", image: "https://www.prefinn.com/_next/static/media/founder.769f88bb.jpg", linkedin: "https://www.linkedin.com/in/rajeshupadhyay333/" },
-            { name: "Archit Singla", role: "Co-Founder & CEO", image: "https://media-hosting.imagekit.io/f8d2b33cebbc466a/Screenshot%202025-03-26%20145305.png?Expires=1837673581&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=gY08AEnNHhGSzmOfbRj28XwBqqxPFRyCAExX5FAN7rcrUlmcAUW9BVvp1fIcBWpETt05dciqP5B0lfU5ry49oiFT89UY7keJOvslV7r~n8hMlQ9SePonOMJmU0FOQQ9cwLPyqbD3z8wHlQUyWlXnNNhkFfTZalZrELv06mGLjMr3Ho4nLmOIMq3LYTB1pVn8RCy~~pqTAm6NBhxWK0W7y5VOZ7jsycXSxnA3fuw9XE5SW~laylyfIbkoC9lt88xFUvdoD~CBKBdDnx7ZYKI0HjC5usNgvBQYyI4DutA2TsUldDqapTfqL8o0JwbTvs63j-4IEJtwJ5v-hA3tSNwyTQ__", linkedin: "https://www.linkedin.com/in/archit-singla" }
+            { name: "Archit Singla", role: "Co-Founder & COO", image: "https://media-hosting.imagekit.io/f8d2b33cebbc466a/Screenshot%202025-03-26%20145305.png?Expires=1837673581&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=gY08AEnNHhGSzmOfbRj28XwBqqxPFRyCAExX5FAN7rcrUlmcAUW9BVvp1fIcBWpETt05dciqP5B0lfU5ry49oiFT89UY7keJOvslV7r~n8hMlQ9SePonOMJmU0FOQQ9cwLPyqbD3z8wHlQUyWlXnNNhkFfTZalZrELv06mGLjMr3Ho4nLmOIMq3LYTB1pVn8RCy~~pqTAm6NBhxWK0W7y5VOZ7jsycXSxnA3fuw9XE5SW~laylyfIbkoC9lt88xFUvdoD~CBKBdDnx7ZYKI0HjC5usNgvBQYyI4DutA2TsUldDqapTfqL8o0JwbTvs63j-4IEJtwJ5v-hA3tSNwyTQ__", linkedin: "https://www.linkedin.com/in/archit-singla" }
           ].map((person, index) => (
             <div key={index} className="col-md-4 d-flex">
               <div className="card border-0 shadow-sm p-4 text-center flex-fill hover-effect">
                 <img src={person.image} alt={person.name} className="rounded-circle mb-3 mx-auto" width="100" height="100" />
                 <h5 className="fw-bold text-blue-900">{person.name}</h5>
                 <p className="text-muted">{person.role}</p>
-                <a href={person.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm w-100">
-                  View LinkedIn
+                <a href={person.linkedin} target="_blank" rel="noopener noreferrer" className=" m-auto btn d-flex justify-content-center align-items-center">
+               
+                  <FaLinkedin />
                   
                 </a>
               </div>
@@ -173,8 +175,9 @@ export default function AboutUs() {
         <p className="text-dark">We're transforming your finance and looking for passionate individuals to join us.</p>
         <p>Email us at <a href="https://webmail.logix.in/?session=f9d8c490c90d969687b99fed91ea214ad3d9446802a44259755d38e6d163e82048aeab4aefc72c24da75f748c6dd30cad3d9446802a44259755d38e6d163e820" className="text-danger fw-bold">@Prefinn.support</a></p>
       </section>
-      <Footer/>
     </div>
+    <Footer/>
+
     </>
   );
 }

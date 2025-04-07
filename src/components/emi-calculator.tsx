@@ -72,8 +72,8 @@ const EMICalculator = ({
   };
 
   return (
-    <div className="bg-white p-6 md:p-10 rounded-xl shadow-sm border border-gray-100">
-      <h2 className="text-2xl md:text-3xl font-bold text-blue-900 text-center mb-6">
+    <div className="bg-white p-4 md:p-10 rounded-xl shadow-sm border border-gray-100">
+      <h2 className="text-2xl md:text-3xl font-bold text-success text-center mb-6">
         EMI Calculator
       </h2>
 
@@ -170,7 +170,7 @@ const EMICalculator = ({
           </div>
         </div>
 
-        <div className="md:col-span-2 bg-gray-50 p-6 rounded-lg">
+        <div className="md:col-span-2 bg-gray-50 p-10 rounded-lg">
           <div className="space-y-6">
             <div>
               <p className="text-muted-foreground text-sm mb-1">Principal Amount</p>
