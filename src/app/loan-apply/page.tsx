@@ -1,10 +1,18 @@
+
+
+
+
+
+
 // "use client";
 // import React, { useState } from "react";
-// import { Form, Button, Card, Container, Row, Col, Alert } from "react-bootstrap";
+// import { Form, Button, Card, Container, Row, Col, Alert, InputGroup } from "react-bootstrap";
 // import Footer from "@/components/footer";
 // import Navbar from "@/components/navbar";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import Link from "next/link";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 // const LoanEnquiry = () => {
 //   const [formData, setFormData] = useState({
@@ -20,23 +28,51 @@
 
 //   const [showError, setShowError] = useState(false); // For validation message
 
-//   const handleChange = (e) => {
+//   const handleChange = (e: any) => {
 //     const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value });
+
+//     // Ensure mobile is only digits and max 10 digits
+//     if (name === "mobile") {
+//       const digits = value.replace(/\D/g, "").slice(0, 10);
+//       setFormData({ ...formData, [name]: digits });
+//     } else {
+//       setFormData({ ...formData, [name]: value });
+//     }
 
 //     // Hide error message when user starts filling fields
 //     if (showError) setShowError(false);
 //   };
 
-//   const handleNextClick = (e) => {
-//     if (!isFormValid) {
-//       e.preventDefault(); // Prevent redirection if form is incomplete
-//       setShowError(true); // Show error message
-//     }
-//   };
-
 //   // Check if all fields are filled
 //   const isFormValid = Object.values(formData).every((field) => field.trim() !== "");
+
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+
+//     if (!isFormValid || formData.mobile.length !== 10) {
+//       setShowError(true);
+//       toast.error("Please fill all fields correctly!", { position: "top-right" });
+//     } else {
+//       const submittedData = {
+//         ...formData,
+//         mobile: "+91" + formData.mobile,
+//       };
+//       console.log("Form submitted:", submittedData);
+//       toast.success("Loan enquiry submitted successfully!", { position: "top-right" });
+
+//       // Clear form
+//       setFormData({
+//         fullName: "",
+//         email: "",
+//         mobile: "",
+//         loanType: "",
+//         amount: "",
+//         city: "",
+//         state: "",
+//         pinCode: "",
+//       });
+//     }
+//   };
 
 //   return (
 //     <>
@@ -45,10 +81,10 @@
 //         <Row>
 //           <Col md={6}>
 //             <h2 className="mb-4">
-//               Register as Channel <span className="fw-bold text-primary">Partner</span>
+//               Loan <span className="fw-bold text-success"> Enquiry Form</span>
 //             </h2>
 //             {showError && <Alert variant="danger">⚠ Please fill all fields to proceed.</Alert>}
-//             <Form>
+//             <Form onSubmit={handleSubmit}>
 //               <Row>
 //                 <Col md={6} className="mb-3">
 //                   <Form.Control
@@ -71,14 +107,17 @@
 //                   />
 //                 </Col>
 //                 <Col md={6} className="mb-3">
-//                   <Form.Control
-//                     type="text"
-//                     placeholder="Mobile Number"
-//                     name="mobile"
-//                     value={formData.mobile}
-//                     onChange={handleChange}
-//                     required
-//                   />
+//                   <InputGroup>
+//                     <InputGroup.Text>+91</InputGroup.Text>
+//                     <Form.Control
+//                       type="text"
+//                       placeholder="Mobile Number"
+//                       name="mobile"
+//                       value={formData.mobile}
+//                       onChange={handleChange}
+//                       required
+//                     />
+//                   </InputGroup>
 //                 </Col>
 //                 <Col md={6} className="mb-3">
 //                   <Form.Select
@@ -91,6 +130,9 @@
 //                     <option value="Personal Loan">Personal Loan</option>
 //                     <option value="Home Loan">Home Loan</option>
 //                     <option value="Car Loan">Car Loan</option>
+//                     <option value="Car Loan">Loan Against property Loan</option>
+//                     <option value="Car Loan">Business Loan</option>
+//                     <option value="Car Loan">Working Capital Loan</option>
 //                   </Form.Select>
 //                 </Col>
 //                 <Col md={6} className="mb-3">
@@ -135,15 +177,9 @@
 //                 </Col>
 //               </Row>
 
-//               <Link href={isFormValid ? "/bank-details" : "#"} passHref>
-//                 <Button
-//                   variant="primary"
-//                   className="w-100"
-//                   onClick={handleNextClick}
-//                 >
-//                   NEXT
-//                 </Button>
-//               </Link>
+//               <Button variant="success" className="w-100" type="submit">
+//                 SUBMIT
+//               </Button>
 //             </Form>
 //           </Col>
 
@@ -154,14 +190,14 @@
 //             <Row>
 //               {[
 //                 "Fill out the online Apply Loan form on website and provide your Basic details..Call Prefinn Team or wait for Call Back.",
-//                 "While Discussing with Prefinn Team, select the Bank/NBFC of your Choice for your Loan requirements and provide the required ",
+//                 "While discussing your loan requirements with the Prefinn team, feel free to select the Bank or NBFC of your choice based on you. ",
 //                 "Once Your Loan Application is filed. Have a personal discussion with Bank Loan Manager and finalise the Loan Amount and Terms and conditions.",
 //                 "Meet the Loan Manager in person, sign the original Loan Application file and take Disbursement of Loan Amount in your preferred Bank Account.",
 //               ].map((text, index) => (
 //                 <Col md={6} key={index} className="mb-3">
 //                   <Card className="text-center p-3" style={{ minHeight: "200px" }}>
 //                     <Card.Body>
-//                       <div className="fs-4 fw-bold text-primary mb-2">{index + 1}</div>
+//                       <div className="fs-4 fw-bold text-success mb-2">{index + 1}</div>
 //                       <Card.Text>{text}</Card.Text>
 //                     </Card.Body>
 //                   </Card>
@@ -172,15 +208,13 @@
 //         </Row>
 //       </Container>
 
+//       <ToastContainer />
 //       <Footer />
 //     </>
 //   );
 // };
 
 // export default LoanEnquiry;
-
-
-
 
 
 
@@ -224,7 +258,7 @@ import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BecomePartner= () => {
+const LoanEnquiry = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -291,7 +325,7 @@ const BecomePartner= () => {
   <Row className="justify-content-center">
     <Col md={12} lg={10}>
       <h2 className="mb-4 text-center">
-        Register as <span className="fw-bold text-success">Channel Partner</span>
+        Loan <span className="fw-bold text-success">Enquiry Form</span>
       </h2>
 
       {showError && (
@@ -420,11 +454,11 @@ const BecomePartner= () => {
     </Col>
     <Col md={12} className="mx-auto">
   <h3 className="mb-4 mt-5 text-center">
-    How to Register as Channel Partner 
+    How to avail Loan from Prefinn
   </h3>
   <Row className="gx-3 gy-4">
     {[
-      "Submit your basic details through the online loan application form and await a call from the Prefinn team or contact us directly.",
+      "Fill out the online Apply Loan form on website and provide your Basic details..Call Prefinn Team or wait for Call Back.",
       "While discussing your loan requirements with the Prefinn team, feel free to select the Bank or NBFC of your choice based on you.",
       "Once Your Loan Application is filed. Have a personal discussion with Bank Loan Manager and finalise the Loan Amount and Terms and conditions.",
       "Meet the Loan Manager in person, sign the original Loan Application file and take Disbursement of Loan Amount in your preferred Bank Account.",
@@ -453,7 +487,69 @@ const BecomePartner= () => {
   );
 };
 
-export default BecomePartner;
+export default LoanEnquiry;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
