@@ -1,5 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@/App.css';
 import { Poppins, Inter } from "next/font/google";
 
 const poppins = Poppins({

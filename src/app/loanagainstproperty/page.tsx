@@ -1,507 +1,28 @@
-// "use client";
-// import React from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import { Container, Tab, Tabs, Col } from "react-bootstrap";
-// import Footer from "@/components/footer";
-// import Navbar from "@/components/navbar";
-// import Table from "react-bootstrap/Table";
-
-// const features = [
-//   {
-//     icon: "🏠",
-//     title: "Collateral",
-//     description:
-//       "A Mortgage Loan Against Property requires you to pledge a residential or commercial property as collateral, offering security to your lender.",
-//   },
-//   {
-//     icon: "📅",
-//     title: "Tenure",
-//     description:
-//       "Loans against property typically have a repayment period of 10-30 years, allowing for manageable monthly payments.",
-//   },
-//   {
-//     icon: "💰",
-//     title: "Interest Rates",  
-//     description:
-//       "You can choose between fixed rates, which ensure predictable monthly payments, or floating rates, which fluctuate with market conditions.",
-//   },
-//   {
-//     icon: "📉",
-//     title: "Loan Amount",
-//     description:
-//       "The amount of a Mortgage Loan Against Property depends on the property's market value and repayment capacity. Lenders typically offer 60-70% of the property value as a loan amount.",
-//   },
-//   {
-//     icon: "🔄",
-//     title: "Flexible Repayment Options",
-//     description:
-//       "Features like part prepayment, balance transfer, and customized plans for self-employed borrowers make Mortgage Loans adaptable to diverse financial needs.",
-//   },
-// ];
-
-// const faqs = [
-//   {
-//     question: "Do I need to pay a fee to avail of a Loan Against Property?",
-//     answer:
-//       "Yes, there are processing charges and prepayment penalties depending on the loan agreement.",
-//   },
-//   {
-//     question: "What is a Mortgage Loan tenure?",
-//     answer:
-//       "The tenure of a mortgage loan usually ranges from 5 to 30 years, depending on the financial institution.",
-//   },
-//   {
-//     question: "How can one repay the Mortgage Loan ahead of schedule?",
-//     answer:
-//       "You can repay your Mortgage Loan by making additional or lump sum payments to reduce your outstanding balance. However, some banks may charge a prepayment penalty. It’s essential to check the prepayment policy before making extra payments.",
-//     highlight: true,
-//   },
-//   {
-//     question:
-//       "Do you need to provide collateral or security for a Mortgage Loan?",
-//     answer: "Yes, a mortgage loan requires property as collateral.",
-//   },
-//   {
-//     question: "Can I get an overdraft against my property?",
-//     answer:
-//       "Some banks provide overdraft facilities based on your mortgage loan.",
-//   },
-// ];
-
-// const LoanAgainstProp = () => {
-//   return (
-//     <>
-//       <Navbar/>
-
-//       <div className="container-fluid p-0" style={{ fontFamily: "Arial, sans-serif" }}>
-//       {/* Banner Section */}
-//        <div className="d-flex flex-column flex-lg-row align-items-center justify-content-top p-4" style={{ background: "#FDFEFE" }}>
-//          <div className="text-center text-lg-start p-4">
-//          <img
-//             src="https://campaigns.icicibank.com/hl/loanAgainstProperty/main/dist/img/lap_banner_desktop.png " // Replace with actual image URL
-//             alt="Smiling Woman"
-//             width="1200" 
-//             height="800"
-//              className="img-fluid d-flex flex-column flex-md-row gap-10 mt-4 "
-//            />
-         
-//          </div>
-//         <div>
-           
-//               <div className="container mt-2">
-//          <div className="card p-4 shadow" style={{ background: "#FDFEFE" }}>
-//            <h3 className="text-center text-danger">Apply now to get an online sanction</h3>
-//            <form>
-//            <div className="mb-3">
-//                <label className="form-label">Name</label>
-//                <input type="text" className="form-control" placeholder="Enter your full name" required />
-//              </div>
-//              <div className="mb-3">
-//                <label className="form-label">Email</label>
-//                <input type="email" className="form-control" placeholder="Enter your email" required />
-//              </div>
-//             <div className="mb-3">
-//               <label className="form-label">Mobile Number</label>
-//                <input type="tel" className="form-control" placeholder="Enter your mobile number" required />
-//              </div>
-//              <div className="mb-3">
-//                <label className="form-label">OTP</label>
-//                <input type="text" className="form-control" placeholder="Enter OTP" required />
-//            </div>
-//              <div className="mb-3">
-//                <label className="form-label">PAN Card Number</label>
-//               <input type="text" className="form-control" placeholder="Enter PAN card number" required />
-//              </div>
-//              <div className="mb-3">
-//                <label className="form-label">Enter Pincode</label>
-//                <input type="text" className="form-control" placeholder="Enter pincode" required />
-//              </div>
-//              <div className="mb-3">
-//                <input type="checkbox" required /> I agree to the Terms & Conditions
-//              </div>
-//              <button className="btn btn-danger w-100">Apply Now</button>
-//            </form>
-//          </div>
-//        </div>
-//         </div>
-//        </div>
-//     </div>
-    
-       
-
-//       {/* Tabs Section */}
-//       <Container className="mt-4">
-//         <Tabs defaultActiveKey="features" id="loan-tabs" className="mb-3">
-//           <Tab eventKey="features" title="FEATURES">
-//             <ul>
-//               <li>★ Maximum repayment tenure up to 180 months</li>
-//               <li>★ EMI Starting at Rs.1268/- per Lakh</li>
-//               <li>★ Holiday/Moratorium period up to 6 months</li>
-//               <li>
-//                 ★ Takeover/Balance Transfer facility with additional Loan amount
-//               </li>
-//               <li>
-//                 ★ Reducible Overdraft facility up to Rs.1500.00 lacs is
-//                 available
-//               </li>
-//             </ul>
-//           </Tab>
-//           <Tab eventKey="eligibility" title="ELIGIBILITY">
-//             <ul>
-//               <li>★ Resident Indian/NRI/PIO are eligible</li>
-//               <li>★ Individuals: Salaried/Self-employed/Professionals</li>
-//               <li>★ Holiday/Moratorium period up to 6 months</li>
-//               <li>
-//                 ★ Regular and confirmed Employees / individuals with high net
-//                 worth Professionals, self-employed and people engaged in trade,
-//                 commerce and business, engaged in business / profession for a
-//                 minimum period of 3 years.
-//               </li>
-//               <li>
-//                 ★ Individuals in permanent service - Max. 60 years or Retirement
-//                 age whichever is earlier.
-//               </li>
-//             </ul>
-//           </Tab>
-//         </Tabs>
-//       </Container>
-
-//       {/* Features Section */}
-//       <Container className="text-center my-5">
-//         <h2 className="fw-bold">Features of Loan Against Property</h2>
-//         <div className="row mt-4">
-//           {features.map((feature, index) => (
-//             <Col key={index} md={2} sm={12} className="text-center mx-auto">
-//               <div className="p-3">
-//                 <div
-//                   className="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
-//                   style={{
-//                     width: "80px",
-//                     height: "80px",
-//                     backgroundColor: "#B0184A",
-//                   }}
-//                 >
-//                   <span style={{ fontSize: "32px", color: "white" }}>
-//                     {feature.icon}
-//                   </span>
-//                 </div>
-//                 <h5 className="fw-bold">{feature.title}</h5>
-//                 <p className="text-muted" style={{ fontSize: "14px" }}>
-//                   {feature.description}
-//                 </p>
-//               </div>
-//             </Col>
-//           ))}
-//         </div>
-//       </Container>
-
-//       {/*interest rate section */}
-
-//       <Container className="mt-5">
-//         <h3 className="fw-bold text-center">
-//           Eligibility criteria for Mortgage Loan
-//         </h3>
-//         <Table bordered className="mt-3">
-//           <thead>
-//             <tr style={{ backgroundColor: "#8A0C3C", color: "white" }}>
-//               <th style={{ color: "blue" }}>Category</th>
-//               <th style={{ color: "blue" }}>
-//                 Loan Against Property Eligibility Criteria
-//               </th>
-//               <th style={{ color: "blue" }}>Age Requirement</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             <tr>
-//               <td>Salaried Individuals</td>
-//               <td>
-//                 Must be in permanent government or reputed company service
-//               </td>
-//               <td>24 to superannuation</td>
-//             </tr>
-//             <tr>
-              
-//               <td>Self-Employed</td>
-//               <td>Must file Income Tax Returns</td>
-//               <td>24 to 65 at loan maturity</td>
-//             </tr>
-//             <tr>
-//               <td>Self-Employed Professionals</td>
-//               <td>Includes doctors, engineers, CAs, etc.</td>
-//               <td>24 to 65 at loan maturity</td>
-//             </tr>
-//             <tr>
-              
-//               <td>Lease Rental Discounting</td>
-//               <td>
-//                 Resident Individuals (Funding for ready commercial property will
-//                 be based on rental value or property value)
-//               </td>
-//               <td></td>
-//             </tr>
-//           </tbody>
-//         </Table>
-//       </Container>
-
-//       <Container className="my-5">
-//         <h3 className="text-center fw-bold">Fees and charges</h3>
-//         <Table bordered>
-//           <thead>
-//             <tr style={{ backgroundColor: "#8A0C3C", color: "white" }}>
-//               <th style={{color:"blue"}}>Charge Type</th>
-//               <th style={{color:"blue"}}>Details</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             <tr>
-//               <td>Processing Charges</td>
-//               <td>
-//                 Up to 1% of the loan amount or ₹10,000 (whichever is higher) +
-//                 GST.
-//               </td>
-//             </tr>
-//             <tr>
-//               <td>Part Prepayment Charges</td>
-//               <td>3% on excess beyond 25% repayment in a quarter</td>
-//             </tr>
-//             <tr>
-//               <td>Foreclosure Charges</td>
-//               <td>3% for business use</td>
-//             </tr>
-//             <tr>
-//               <td>Other Charges</td>
-//               <td>
-//                 Cheque Bounce, Stamp Duty, Duplicate Statement, Photocopy
-//                 Issuance, Credit Report, CERSAI, Equitable Mortgage
-//               </td>
-//             </tr>
-//           </tbody>
-//         </Table>
-//       </Container>
-
-//       {/* FAQs Section */}
-//       <Container className="my-5">
-//         <h3 className="text-center fw-bold">
-//           Frequently Asked Questions (FAQs)
-//         </h3>
-//         <div className="mt-4">
-//           {faqs.map((faq, index) => (
-//             <div key={index} className="p-3 mb-3 border rounded">
-//               <h5
-//                 className={`fw-bold mb-2 ${faq.highlight ? "text-dark" : ""}`}
-//               >
-//                 {index + 1}. {faq.question}
-//               </h5>
-//               <p className="text-muted">{faq.answer}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </Container>
-
-//       <Footer/>
-//     </>
-//   );
-// };
-
-// export default LoanAgainstProp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
-// const LoanApplication = () => {
-//   return (
-//     <div className="container-fluid p-0" style={{ fontFamily: "Arial, sans-serif" }}>
-//       {/* Banner Section */}
-//       <div className="d-flex flex-column flex-lg-row align-items-center justify-content-between p-4" style={{ background: "#FDFEFE" }}>
-//         {/* Left Content */}
-//         <div className="text-center text-lg-start p-4">
-//           <h1 style={{ color: "#B0184A", fontWeight: "bold" }}>
-//             Let us help you write <br />
-//             <span style={{ color: "#9C131A" }}>the next chapter of your life!</span>
-//           </h1>
-//           <div className="d-flex flex-column flex-md-row gap-3 mt-4">
-//             <div className="text-center">
-//               <img src="/icons/documents.png" alt="Minimal documentation" width="50" />
-//               <p>Minimal documentation</p>
-//             </div>
-//             <div className="text-center">
-//               <img src="/icons/money.png" alt="Simplified disbursement" width="50" />
-//               <p>Simplified disbursement</p>
-//             </div>
-//             <div className="text-center">
-//               <img src="/icons/projects.png" alt="Approved projects" width="50" />
-//               <p>Vast database of approved projects</p>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Right Content - Form */}
-//         <div className="container mt-2" style={{ maxWidth: "400px" }}>
-//           <div className="card p-4 shadow">
-//             <h3 className="text-center text-danger">Apply now to get an online sanction</h3>
-//             <form>
-//               <div className="mb-3">
-//                 <label className="form-label">Name</label>
-//                 <input type="text" className="form-control" placeholder="Enter your full name" required />
-//               </div>
-//               <div className="mb-3">
-//                 <label className="form-label">Email</label>
-//                 <input type="email" className="form-control" placeholder="Enter your email" required />
-//               </div>
-//               <div className="mb-3">
-//                 <label className="form-label">Mobile Number</label>
-//                 <input type="tel" className="form-control" placeholder="Enter your mobile number" required />
-//               </div>
-//               <div className="mb-3">
-//                 <label className="form-label">OTP</label>
-//                 <input type="text" className="form-control" placeholder="Enter OTP" required />
-//               </div>
-//               <div className="mb-3">
-//                 <label className="form-label">PAN Card Number</label>
-//                 <input type="text" className="form-control" placeholder="Enter PAN card number" required />
-//               </div>
-//               <div className="mb-3">
-//                 <label className="form-label">Enter Pincode</label>
-//                 <input type="text" className="form-control" placeholder="Enter pincode" required />
-//               </div>
-//               <div className="mb-3">
-//                 <input type="checkbox" required /> I agree to the Terms & Conditions
-//               </div>
-//               <button className="btn btn-danger w-100">Apply Now</button>
-//             </form>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default LoanApplication;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // "use client";
 // import React, { useState } from "react";
 // import "bootstrap/dist/css/bootstrap.min.css";
-// import { Container, Tab, Tabs, Col, Row, Form, Button, Card, Table } from "react-bootstrap";
-// import { Doughnut } from "react-chartjs-2";
 // import Navbar from "@/components/navbar";
-// import Footer from "@/components/footer";
+//  import Footer from "@/components/footer";
+// import {
+//   Container,
+//   Tab,
+//   Tabs,
+//   Col,
+//   Row,
+//   Form,
+//   Button,
+//   Card,
+//   Table,
+// } from "react-bootstrap";
+// import { Doughnut } from "react-chartjs-2";
+ 
 // import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 // // import { Doughnut } from "react-chartjs-2";
 
 // // Register required elements
 // ChartJS.register(ArcElement, Tooltip, Legend);
-
 
 // const LoanAgainstProp = () => {
 //   const [loanAmount, setLoanAmount] = useState(40000000);
@@ -509,7 +30,7 @@
 //   const [tenure, setTenure] = useState(10);
 
 //   // EMI Calculation Formula
-//   const calculateEMI = (P:number, R:number, N:number) => {  
+//   const calculateEMI = (P: number, R: number, N: number) => {
 //     const monthlyRate = R / 1200;
 //     const months = N * 12;
 //     return (P * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
@@ -531,58 +52,106 @@
 //     ],
 //   };
 
+
+  
+
 //   return (
 //     <>
 //       <Navbar />
 
 //       {/* Banner Section */}
-//       <Container fluid className="p-0">
-//         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center p-0 " style={{ background: "#FDFEFE" }}>
-//         <img
-//   src="https://campaigns.icicibank.com/hl/loanAgainstProperty/main/dist/img/lap_banner_desktop.png"
-//   alt="Loan Banner"
-//   className="img-fluid"
-//   // style={{ maxWidth: "100%", height: "auto" }} // This should be separate from className
-// />
-
+//       <Container fluid className="position-relative p-0">
+//         {/* Banner Image */}
+//         <div className="position-relative">
+//           <img
+//             src="https://img.freepik.com/premium-photo/home-piggy-security-concept-insurance-real-estate-protecting-gesture-man-house_512283-75.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid&w=740"
+//             alt="Loan Banner"
+//             className="img-fluid w-100"
+//             style={{ height: "550px", objectFit: "cover" }}
+//           />
 //         </div>
-//       </Container>
 
-//       {/* Loan Application Form */}
-//       <Container className="mt-4">
-//         <Card className="p-4 shadow">
-//           <h3 className="text-center text-danger">Apply now for an Online Sanction</h3>
-//           <Form>
-//             <Form.Group className="mb-3">
-//               <Form.Label>Name</Form.Label>
-//               <Form.Control type="text" placeholder="Enter your full name" required />
-//             </Form.Group>
-//             <Form.Group className="mb-3">
-//               <Form.Label>Email</Form.Label>
-//               <Form.Control type="email" placeholder="Enter your email" required />
-//             </Form.Group>
-//             <Form.Group className="mb-3">
-//               <Form.Label>Mobile Number</Form.Label>
-//               <Form.Control type="tel" placeholder="Enter your mobile number" required />
-//             </Form.Group>
-//             <Form.Group className="mb-3">
-//               <Form.Label>OTP</Form.Label>
-//               <Form.Control type="text" placeholder="Enter OTP" required />
-//             </Form.Group>
-//             <Form.Group className="mb-3">
-//               <Form.Label>PAN Card Number</Form.Label>
-//               <Form.Control type="text" placeholder="Enter PAN card number" required />
-//             </Form.Group>
-//             <Form.Group className="mb-3">
-//               <Form.Label>Enter Pincode</Form.Label>
-//               <Form.Control type="text" placeholder="Enter pincode" required />
-//             </Form.Group>
-//             <Form.Group className="mb-3">
-//               <Form.Check type="checkbox" label="I agree to the Terms & Conditions" required />
-//             </Form.Group>
-//             <Button className="btn btn-danger w-100">Apply Now</Button>
-//           </Form>
-//         </Card>
+//         {/* Loan Application Form */}
+//         <div
+//           className="position-absolute top-50 end-0 translate-middle-y"
+//           style={{
+//             width: "400px", // Compact width
+//             background: "transparent",
+//             padding: "15px",
+//             borderRadius: "10px",
+//             right: "15%",
+//             maxHeight: "500px", // Ensures form height does not exceed banner
+//             // overflowY: "auto",
+//           }}
+//         >
+//           <Card className="p-2 shadow">
+//             <h6 className="text-center text-danger mb-2">Apply Now For Quick Loan Processing</h6>
+//             <Form>
+//               <Form.Group className="mb-1">
+//                 <Form.Label className="small">Name</Form.Label>
+//                 <Form.Control
+//                   type="text"
+//                   placeholder="Full Name"
+//                   required
+//                   size="sm"
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-1">
+//                 <Form.Label className="small">Email</Form.Label>
+//                 <Form.Control
+//                   type="email"
+//                   placeholder="Email"
+//                   required
+//                   size="sm"
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-1">
+//                 <Form.Label className="small">Mobile Number</Form.Label>
+//                 <Form.Control
+//                   type="tel"
+//                   placeholder="Mobile"
+//                   required
+//                   size="sm"
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-1">
+//                 <Form.Label className="small">OTP</Form.Label>
+//                 <Form.Control
+//                   type="text"
+//                   placeholder="Enter OTP"
+//                   required
+//                   size="sm"
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-1">
+//                 <Form.Label className="small">PAN Card Number</Form.Label>
+//                 <Form.Control
+//                   type="text"
+//                   placeholder="PAN Number"
+//                   required
+//                   size="sm"
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-1">
+//                 <Form.Label className="small">Pincode</Form.Label>
+//                 <Form.Control
+//                   type="text"
+//                   placeholder="Pincode"
+//                   required
+//                   size="sm"
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-1">
+//                 <Form.Check
+//                   type="checkbox"
+//                   label="I agree to the Terms & Conditions"
+//                   required
+//                 />
+//               </Form.Group>
+//               <Button className="btn btn-danger w-100 btn-sm">Apply Now</Button>
+//             </Form>
+//           </Card>
+//         </div>
 //       </Container>
 
 //       {/* LAP Calculator */}
@@ -592,35 +161,85 @@
 //             <h3 className="fw-bold text-danger">LAP Calculator</h3>
 //             <Form.Group className="my-3">
 //               <Form.Label>Loan Amount</Form.Label>
-//               <Form.Control type="text" value={`₹ ${loanAmount.toLocaleString()}`} readOnly className="mb-2" />
-//               <Form.Range min="100000" max="100000000" step="100000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} />
+//               <Form.Control
+//                 type="text"
+//                 value={`₹ ${loanAmount.toLocaleString()}`}
+//                 readOnly
+//                 className="mb-2"
+//               />
+//               <Form.Range
+//                 min="100000"
+//                 max="100000000"
+//                 step="100000"
+//                 value={loanAmount}
+//                 onChange={(e) => setLoanAmount(Number(e.target.value))}
+//               />
 //             </Form.Group>
 //             <Form.Group className="my-3">
 //               <Form.Label>Interest Rate</Form.Label>
-//               <Form.Control type="text" value={`${interestRate}%`} readOnly className="mb-2" />
-//               <Form.Range min="1" max="20" step="0.1" value={interestRate} onChange={(e) => setInterestRate(Number(e.target.value))} />
+//               <Form.Control
+//                 type="text"
+//                 value={`${interestRate}%`}
+//                 readOnly
+//                 className="mb-2"
+//               />
+//               <Form.Range
+//                 min="1"
+//                 max="20"
+//                 step="0.1"
+//                 value={interestRate}
+//                 onChange={(e) => setInterestRate(Number(e.target.value))}
+//               />
 //             </Form.Group>
 //             <Form.Group className="my-3">
 //               <Form.Label>Tenure (Years)</Form.Label>
-//               <Form.Control type="text" value={`${tenure} years`} readOnly className="mb-2" />
-//               <Form.Range min="1" max="15" step="1" value={tenure} onChange={(e) => setTenure(Number(e.target.value))} />
+//               <Form.Control
+//                 type="text"
+//                 value={`${tenure} years`}
+//                 readOnly
+//                 className="mb-2"
+//               />
+//               <Form.Range
+//                 min="1"
+//                 max="15"
+//                 step="1"
+//                 value={tenure}
+//                 onChange={(e) => setTenure(Number(e.target.value))}
+//               />
 //             </Form.Group>
 //           </Col>
 
 //           <Col lg={6}>
-//             <Card className="p-4 shadow-sm" style={{ background: "#F8E7DD", borderRadius: "10px" }}>
+//             <Card
+//               className="p-4 shadow-sm"
+//               style={{ background: "#F8E7DD", borderRadius: "10px" }}
+//             >
 //               <Row>
-//                 <Col md={6}><Doughnut data={chartData} options={{ cutout: "75%" }} /></Col>
-//                 <Col md={6} className="d-flex flex-column justify-content-center">
-//                   <p className="fw-bold text-danger">Principal Amount: ₹ {loanAmount.toLocaleString()}</p>
-//                   <p className="fw-bold text-danger">Interest Payable: ₹ {interestPayable.toLocaleString()}</p>
-//                   <p className="fw-bold text-danger">Total Payment: ₹ {totalPayment.toLocaleString()}</p>
+//                 <Col md={6}>
+//                   <Doughnut data={chartData} options={{ cutout: "75%" }} />
+//                 </Col>
+//                 <Col
+//                   md={6}
+//                   className="d-flex flex-column justify-content-center"
+//                 >
+//                   <p className="fw-bold text-danger">
+//                     Principal Amount: ₹ {loanAmount.toLocaleString()}
+//                   </p>
+//                   <p className="fw-bold text-danger">
+//                     Interest Payable: ₹ {interestPayable.toLocaleString()}
+//                   </p>
+//                   <p className="fw-bold text-danger">
+//                     Total Payment: ₹ {totalPayment.toLocaleString()}
+//                   </p>
 //                 </Col>
 //               </Row>
 //               <Button variant="outline-primary" className="w-100 my-3">
-//                 Monthly EMI: ₹{emi.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+//                 Monthly EMI: ₹
+//                 {emi.toLocaleString(undefined, { maximumFractionDigits: 0 })}
 //               </Button>
-//               <Button variant="danger" className="w-100">Calculate</Button>
+//               <Button variant="danger" className="w-100">
+//                 Calculate
+//               </Button>
 //             </Card>
 //           </Col>
 //         </Row>
@@ -630,6 +249,7 @@
 //     </>
 //   );
 // };
+
 
 // export default LoanAgainstProp;
 
@@ -644,255 +264,737 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 "use client";
 import React, { useState } from "react";
+import { Container, Row, Col, Button, Card, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "@/components/navbar";
- import Footer from "@/components/footer";
-import {
-  Container,
-  Tab,
-  Tabs,
-  Col,
-  Row,
-  Form,
-  Button,
-  Card,
-  Table,
-} from "react-bootstrap";
-import { Doughnut } from "react-chartjs-2";
- 
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-// import { Doughnut } from "react-chartjs-2";
+import Footer from "@/components/footer";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-// Register required elements
-ChartJS.register(ArcElement, Tooltip, Legend);
+export default function PersonalLoans() {
 
-const LoanAgainstProp = () => {
-  const [loanAmount, setLoanAmount] = useState(40000000);
-  const [interestRate, setInterestRate] = useState(9);
-  const [tenure, setTenure] = useState(10);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    otp: "",
+    pan: "",
+    pincode: "",
+    agree: false,
+  });
+
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    otp: "",
+    pan: "",
+    pincode: "",
+    agree: "",
+  });
+
+  // Validation patterns
+  const patterns = {
+    name: /^[a-zA-Z ]{3,}$/,
+    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    mobile: /^[0-9]{10}$/,
+    otp: /^[0-9]{6}$/,
+    pan: /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/,
+    pincode: /^[0-9]{6}$/,
+  };
+
+  const validateField = (name: string, value: string | boolean) => {
+    let error = "";
+
+    if (typeof value === "string" && !value.trim()) {
+      error = "This field is required";
+    } else {
+      switch (name) {
+        case "name":
+          if (!patterns.name.test(String(value)))
+            error = "Minimum 3 characters required";
+          break;
+        case "email":
+          if (!patterns.email.test(String(value)))
+            error = "Invalid email format";
+          break;
+        case "mobile":
+          if (!patterns.mobile.test(String(value)))
+            error = "Invalid mobile number";
+          break;
+        case "otp":
+          if (!patterns.otp.test(String(value))) error = "6-digit OTP required";
+          break;
+        case "pan":
+          if (!patterns.pan.test(String(value)))
+            error = "Invalid PAN format (e.g. ABCDE1234F)";
+          break;
+        case "pincode":
+          if (!patterns.pincode.test(String(value)))
+            error = "6-digit pincode required";
+          break;
+        case "agree":
+          if (!value) error = "You must agree to terms";
+          break;
+      }
+    }
+
+    setErrors((prev) => ({ ...prev, [name]: error }));
+    return error === "";
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    const val = type === "checkbox" ? checked : value;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: name === "pan" ? value.toUpperCase() : val,
+    }));
+
+    if (errors[name as keyof typeof errors]) validateField(name, val);
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    validateField(name, value);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    let isValid = true;
+
+    Object.entries(formData).forEach(([name, value]) => {
+      isValid = validateField(name, value) && isValid;
+    });
+
+    if (isValid) {
+      console.log("Form submitted:", formData);
+      toast.success("Form submitted successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        otp: "",
+        pan: "",
+        pincode: "",
+        agree: false,
+      });
+    }
+  };
+
+  const toggleCard = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const faqs = [
+    {
+      question: " What can I use a personal loan for?",
+      answer:
+        "A personal loan can be used for almost any type of expense ranging from big ticket appliance purchases and home renovations to luxury vacations and debt consolidation. Some other cases where personal loans may be useful include payment to unexpected medical bills, investment in business, fixing your car, down payment of new house and much more.",
+    },
+    {
+      question: "Is there a minimum personal loan amount that I need to borrow?",
+      answer:
+        "Yes. Though the exact amount of the minimum personal loan amount varies from one lending institution to another, most lenders have set their minimum personal loan principal amount at Rs. 30,000",
+    },
+    {
+      question: "What is the tenure of a personal loan?",
+      answer:
+        "Personal loans feature tenure of 1 year to 5 years or 12 to 60 months. In rare cases, shorter or longer personal loan tenures may be allowed by the borrower on a case by case basis.",
+    },
+    {
+      question: "How to repay the personal loan?",
+      answer:
+        "The loan can be repaid in the form of Equated Monthly Installment (EMI) via post-dated cheques   drawn in favour of the bank or by releasing a mandate allowing payment through the Electronic Clearing Services (ECS) system.",
+
+    },
+    {
+      question: "What are the key documents required when applying for a personal loan?",
+      answer:
+        <ul>
+          <li>
+            Income proof (Salary Slip for salaried/recent acknowledged ITR for self-employed)
+          </li>
+          <li>
+          Address Proof Documents
+          </li>
+          <li>
+          Identity Proof Documents and others
+          </li>
+          <li>
+          Certified copies of degree/license (in case of self-employed professional) and others as per the lender’s criteria.
+          </li>
+        </ul>
+
+    }
+  ];
+
+  // EMI Calculator State
+  const [loanAmount, setLoanAmount] = useState(500000);
+  const [tenure, setTenure] = useState(24);
+  const [interestRate, setInterestRate] = useState(11.25);
 
   // EMI Calculation Formula
-  const calculateEMI = (P: number, R: number, N: number) => {
-    const monthlyRate = R / 1200;
-    const months = N * 12;
-    return (P * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
+  const calculateEMI = (P: number, r: number, n: number): number => {
+    const monthlyRate = r / (12 * 100);
+    return (P * monthlyRate * Math.pow(1 + monthlyRate, n)) /
+      (Math.pow(1 + monthlyRate, n) - 1);
   };
 
   const emi = calculateEMI(loanAmount, interestRate, tenure);
-  const totalPayment = emi * tenure * 12;
-  const interestPayable = totalPayment - loanAmount;
-
-  // Chart Data
-  const chartData = {
-    labels: ["Principal Amount", "Interest Payable"],
-    datasets: [
-      {
-        data: [loanAmount, interestPayable],
-        backgroundColor: ["#D9531E", "#F8E7DD"],
-        borderWidth: 0,
-      },
-    ],
-  };
-
-
-  
+  const totalPayment = emi * tenure;
+  const totalInterest = totalPayment - loanAmount;
 
   return (
     <>
+     
       <Navbar />
-
-      {/* Banner Section */}
-      <Container fluid className="position-relative p-0">
-        {/* Banner Image */}
+      <>
+        {/* Your main JSX */}
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar
+        />
+      </>
+      <div
+        className="container-fluid p-0"
+        style={{ fontFamily: "Arial, sans-serif", position: "relative" }}
+      >
+        {/* Banner Section */}
         <div className="position-relative">
+          {/* Background Image */}
           <img
-            src="https://img.freepik.com/premium-photo/home-piggy-security-concept-insurance-real-estate-protecting-gesture-man-house_512283-75.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid&w=740"
-            alt="Loan Banner"
+            src="https://img.freepik.com/premium-photo/indian-real-estate-business-concept-showing-3d-model-house-with-keys-paper-currency-notes-calculator-selective-focus_466689-61481.jpg?ga=GA1.1.56492630.1742847583&semt=ais_country_boost&w=740"
             className="img-fluid w-100"
-            style={{ height: "550px", objectFit: "cover" }}
+            style={{ height: "100vh", objectFit: "cover" }}
+            alt="personal Loan"
           />
-        </div>
 
-        {/* Loan Application Form */}
-        <div
-          className="position-absolute top-50 end-0 translate-middle-y"
-          style={{
-            width: "400px", // Compact width
-            background: "transparent",
-            padding: "15px",
-            borderRadius: "10px",
-            right: "15%",
-            maxHeight: "500px", // Ensures form height does not exceed banner
-            // overflowY: "auto",
-          }}
-        >
-          <Card className="p-2 shadow">
-            <h6 className="text-center text-danger mb-2">Apply Now For Quick Loan Processing</h6>
-            <Form>
-              <Form.Group className="mb-1">
-                <Form.Label className="small">Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Full Name"
-                  required
-                  size="sm"
-                />
-              </Form.Group>
-              <Form.Group className="mb-1">
-                <Form.Label className="small">Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Email"
-                  required
-                  size="sm"
-                />
-              </Form.Group>
-              <Form.Group className="mb-1">
-                <Form.Label className="small">Mobile Number</Form.Label>
-                <Form.Control
-                  type="tel"
-                  placeholder="Mobile"
-                  required
-                  size="sm"
-                />
-              </Form.Group>
-              <Form.Group className="mb-1">
-                <Form.Label className="small">OTP</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter OTP"
-                  required
-                  size="sm"
-                />
-              </Form.Group>
-              <Form.Group className="mb-1">
-                <Form.Label className="small">PAN Card Number</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="PAN Number"
-                  required
-                  size="sm"
-                />
-              </Form.Group>
-              <Form.Group className="mb-1">
-                <Form.Label className="small">Pincode</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Pincode"
-                  required
-                  size="sm"
-                />
-              </Form.Group>
-              <Form.Group className="mb-1">
-                <Form.Check
-                  type="checkbox"
-                  label="I agree to the Terms & Conditions"
-                  required
-                />
-              </Form.Group>
-              <Button className="btn btn-danger w-100 btn-sm">Apply Now</Button>
-            </Form>
-          </Card>
-        </div>
-      </Container>
+          {/* Form Container */}
+          <div
+            className="position-absolute "
+            style={{
+              top: "20px", // ⬅ Adjust top spacing here
+              right: "20px",
+              width: "100%",
+              maxWidth: "550px",
+              maxHeight: "calc(100vh - 100px)", // ⬅ Ensures it fits in screen with space
+              overflowY: "hidden",
+              background: "#FDFEFE",
+              borderRadius: "20px",
+              boxShadow: "0 4px 16px rgba(0, 0, 0, 0.2)",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <div className="border-0" style={{ background: "transparent" }}>
+              <h5 className="text-center text-danger mb-1">
+                Apply for Personal Loan
+              </h5>
 
-      {/* LAP Calculator */}
-      <Container className="py-5">
-        <Row className="justify-content-center">
-          <Col lg={5} className="pe-lg-5">
-            <h3 className="fw-bold text-danger">LAP Calculator</h3>
-            <Form.Group className="my-3">
-              <Form.Label>Loan Amount</Form.Label>
-              <Form.Control
-                type="text"
-                value={`₹ ${loanAmount.toLocaleString()}`}
-                readOnly
-                className="mb-2"
-              />
-              <Form.Range
-                min="100000"
-                max="100000000"
-                step="100000"
-                value={loanAmount}
-                onChange={(e) => setLoanAmount(Number(e.target.value))}
-              />
-            </Form.Group>
-            <Form.Group className="my-3">
-              <Form.Label>Interest Rate</Form.Label>
-              <Form.Control
-                type="text"
-                value={`${interestRate}%`}
-                readOnly
-                className="mb-2"
-              />
-              <Form.Range
-                min="1"
-                max="20"
-                step="0.1"
-                value={interestRate}
-                onChange={(e) => setInterestRate(Number(e.target.value))}
-              />
-            </Form.Group>
-            <Form.Group className="my-3">
-              <Form.Label>Tenure (Years)</Form.Label>
-              <Form.Control
-                type="text"
-                value={`${tenure} years`}
-                readOnly
-                className="mb-2"
-              />
-              <Form.Range
-                min="1"
-                max="15"
-                step="1"
-                value={tenure}
-                onChange={(e) => setTenure(Number(e.target.value))}
-              />
-            </Form.Group>
+              <form onSubmit={handleSubmit}>
+                {/* Name */}
+                <div className="mb-2">
+                  <label className="form-label small ">
+                    Name <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    className={`form-control form-control-sm ${errors.name && "is-invalid"
+                      }`}
+                    placeholder="Enter your full name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    required
+                  />
+                  {errors.name && (
+                    <div className="invalid-feedback">{errors.name}</div>
+                  )}
+                </div>
+
+                {/* Email */}
+                <div className="mb-2">
+                  <label className="form-label small">
+                    Email <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    className={`form-control form-control-sm ${errors.email && "is-invalid"
+                      }`}
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    required
+                  />
+                  {errors.email && (
+                    <div className="invalid-feedback">{errors.email}</div>
+                  )}
+                </div>
+
+                {/* Mobile */}
+                <div className="mb-2">
+                  <label className="form-label small">
+                    Mobile Number <span className="text-danger">*</span>
+                  </label>
+                  <div className="input-group">
+                    <span className="input-group-text">+91</span>
+                    <input
+                      type="tel"
+                      name="mobile"
+                      className={`form-control form-control-sm ${errors.mobile && "is-invalid"
+                        }`}
+                      placeholder="Enter your mobile number"
+                      value={formData.mobile}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      maxLength={10}
+                      required
+                    />
+                  </div>
+                  {errors.mobile && (
+                    <div className="invalid-feedback d-block">
+                      {errors.mobile}
+                    </div>
+                  )}
+                </div>
+
+                {/* OTP */}
+                <div className="mb-2">
+                  <label className="form-label small">
+                    OTP <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="otp"
+                    className={`form-control form-control-sm ${errors.otp && "is-invalid"
+                      }`}
+                    placeholder="Enter OTP"
+                    value={formData.otp}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    maxLength={6}
+                    required
+                  />
+                  {errors.otp && (
+                    <div className="invalid-feedback d-block">{errors.otp}</div>
+                  )}
+                </div>
+
+                {/* PAN Card */}
+                <div className="mb-2">
+                  <label className="form-label small">
+                    PAN Card Number <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="pan"
+                    className={`form-control form-control-sm ${errors.pan && "is-invalid"
+                      }`}
+                    placeholder="Enter PAN card number"
+                    value={formData.pan}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    maxLength={10}
+                    required
+                  />
+                  {errors.pan && (
+                    <div className="invalid-feedback">{errors.pan}</div>
+                  )}
+                </div>
+
+                {/* Pincode */}
+                <div className="mb-2">
+                  <label className="form-label small">
+                    Enter Pincode <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="pincode"
+                    className={`form-control form-control-sm ${errors.pincode && "is-invalid"
+                      }`}
+                    placeholder="Enter pincode"
+                    value={formData.pincode}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    maxLength={6}
+                    required
+                  />
+                  {errors.pincode && (
+                    <div className="invalid-feedback">{errors.pincode}</div>
+                  )}
+                </div>
+
+                {/* Agree Checkbox */}
+                <div className="mb-2 form-check">
+                  <input
+                    type="checkbox"
+                    name="agree"
+                    className={`form-check-input ${errors.agree && "is-invalid"
+                      }`}
+                    checked={formData.agree}
+                    onChange={handleChange}
+                    required
+                  />
+                  <label className="form-check-label">
+                    I agree to the{" "}
+                    <a
+                      href="/term-cond"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-danger"
+                    >
+                      Terms & Conditions
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="/privacy-pol"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-danger"
+                    >
+                      Privacy Policy
+                    </a>
+                  </label>
+                  {errors.agree && (
+                    <div className="invalid-feedback d-block">
+                      {errors.agree}
+                    </div>
+                  )}
+                </div>
+
+                {/* Submit Button */}
+                <div className="text-center mt-auto">
+                  <button
+                    type="submit"
+                    className="bg-danger text-white px-2 py-1 rounded border-0"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Container fluid className="p-4" style={{ backgroundColor: "#FEFEFE" }}>
+        <Row>
+          {/* Left Side Panel */}
+
+          <Col md={4}>
+            <Card className="text-white p-4" style={{ backgroundColor: "#588e8a" }}>
+              <h4 className="fw-bold text-black">No Hassle, No Delay</h4>
+              <h2 className="fw-bold">100% SIMPLE PROCESS</h2>
+              <ul className="list-unstyled mt-10">
+                <li>✔ PROVIDE YOUR BASIC INFORMATION </li>
+                <li>✔ PICK THE BEST OFFER FOR YOU</li>
+                <li>✔ RECEIVE YOUR LOAN WITHOUT THE WAIT </li>
+              </ul>
+            </Card>
           </Col>
 
-          <Col lg={6}>
-            <Card
-              className="p-4 shadow-sm"
-              style={{ background: "#F8E7DD", borderRadius: "10px" }}
-            >
-              <Row>
-                <Col md={6}>
-                  <Doughnut data={chartData} options={{ cutout: "75%" }} />
-                </Col>
-                <Col
-                  md={6}
-                  className="d-flex flex-column justify-content-center"
-                >
-                  <p className="fw-bold text-danger">
-                    Principal Amount: ₹ {loanAmount.toLocaleString()}
-                  </p>
-                  <p className="fw-bold text-danger">
-                    Interest Payable: ₹ {interestPayable.toLocaleString()}
-                  </p>
-                  <p className="fw-bold text-danger">
-                    Total Payment: ₹ {totalPayment.toLocaleString()}
-                  </p>
-                </Col>
-              </Row>
-              <Button variant="outline-primary" className="w-100 my-3">
-                Monthly EMI: ₹
-                {emi.toLocaleString(undefined, { maximumFractionDigits: 0 })}
-              </Button>
-              <Button variant="danger" className="w-100">
-                Calculate
-              </Button>
+          {/* Center Image Section */}
+          <Col md={4} className="text-center d-flex flex-column align-items-center justify-content-center">
+            <img src="https://img.freepik.com/free-photo/excited-ceo-corporate-man-manager-pointing-aside-promo-text-showing-left-banner-smiling-amazed-standing-white-background_176420-53107.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid" alt="Loan Offer" className="img-fluid" />
+            {/* <img src="https://img.freepik.com/free-photo/man-presenting-something_1368-3697.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid" alt="Loan Offer" className="img-fluid" /> */}
+            <h4 className="fw-bold text-success me-0 mt-3">LOW INTEREST RATES</h4>
+          </Col>
+
+          {/* Right Side Form */}
+          <Col md={4}>
+            <Card className="text-white p-4" style={{ backgroundColor: "#588e8a" }}>
+              <h4 className="fw-bold text-black">Fast & Easy</h4>
+              <h2 className="fw-sm-bold">Empower Yourself with Our Smart Solution</h2>
+              <ul className="list-unstyled mt-4">
+                <li>✔ SUBMIT DETAILS SECURELY </li>
+                <li>✔ GET FUNDS TRANSFERRED QUICKLY</li>
+                <li>✔ GET MONEY IN YOUR ACCOUNT</li>
+              </ul>
             </Card>
           </Col>
         </Row>
       </Container>
 
+      <Container fluid className="py-5 text-center mt-0">
+        {" "}
+        {/* Use fluid to make it full-width */}
+        <h2 style={{ fontWeight: "bold", color: "#27543a " }}>
+          Fast Approvals, Safe Process That’s the Prefinn Promise
+        </h2>
+        <Row className="mt-4 no-gutters">
+          {" "}
+          {/* Use no-gutters to remove padding between columns */}
+          <Col xs={12} md={4}>
+            <Card
+              className="p-3 shadow-sm"
+              style={{
+                borderRadius: "25px",
+                minHeight: "120px",
+                width: "100%",
+                margin: "0",
+                backgroundColor: "#f0f8ff",
+              }}
+            >
+              <h5 style={{ color: "dark", fontWeight: "bold" }}>
+                Get Instant Approval
+              </h5>
+              <p style={{ fontSize: "14px", color: "#008080" }}>
+                Quick Decisions, Faster Access to Funds
+                Receive loan approval in real time .
+              </p>
+            </Card>
+          </Col>
+          <Col xs={12} md={4}>
+            <Card
+              className="p-3 shadow-sm"
+              style={{
+                borderRadius: "25px",
+                minHeight: "120px",
+                width: "100%",
+                margin: "0",
+                backgroundColor: "#f0f8ff",
+              }}
+            >
+              <h5 style={{ color: "dark", fontWeight: "bold" }}>
+                Your Ideal Personal Loan Starts Here
+              </h5>
+              <p style={{ fontSize: "14px", color: "#008080" }}>
+                From low interest rates to fast approvals ,Prefinn brings it all together lenders.
+              </p>
+            </Card>
+          </Col>
+          <Col xs={12} md={4}>
+            <Card
+              className="p-3 shadow-sm"
+              style={{
+                borderRadius: "25px",
+                minHeight: "120px",
+                width: "100%",
+                margin: "0",
+                backgroundColor: "#f0f8ff",
+              }}
+            >
+              <h5 style={{ color: "dark", fontWeight: "bold" }}>
+                Fast Funds, No Fuss – Make It Happen Now
+              </h5>
+              <p style={{ fontSize: "14px", color: "#008080" }}>
+                Personal loans designed to match your life and your pace.
+              </p>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      <Container
+        fluid
+        className="py-5 mt-0"
+        style={{ backgroundColor: "#f2f5ff", borderRadius: "0" }}
+      >
+        {" "}
+        {/* Use fluid to make it full-width */}
+        <Row className="text-center mb-4">
+          <Col>
+            <h2 className="fw-bold" style={{ color: "#27543a " }}>
+              The Prefinn Promise
+            </h2>
+            <p className="text-muted">Smart Secure Personal Loans</p>
+          </Col>
+        </Row>
+        <Row className="justify-content-center no-gutters">
+          {" "}
+          {/* Use no-gutters to remove padding between columns */}
+          {[
+            {
+              title: "No More Waiting, Get Your Personal Loan Fast",
+              text: "Our quick and easy process gets you the funds when you need them most.",
+            },
+            {
+              title: "Loan Experts Who Care",
+              text: "Count on expert support and a dedicated advisor to simplify your personal loan journey.",
+            },
+            {
+              title: "Customized Loans, Professional Service",
+              text: "Get matched with reputable lenders offering low-interest personal loans tailored for you.",
+            },
+            {
+              title: "Smart Financing Here",
+              text: "Benefit from low rates, flexible tenures, and loan offers.personalized to your financial profile.",
+            },
+          ].map((item, index) => (
+            <Col xs={12} sm={6} md={3} className="mb-0" key={index}>
+              {" "}
+              {/* Set mb-0 to remove bottom margin */}
+              <Card
+                className="p-3 border-0 shadow-sm text-center"
+                style={{
+                  transition: "background-color 0.3s ease-in-out",
+                  cursor: "pointer",
+                  minHeight: "200px",
+                  borderRadius: "25px",
+                  width: "100%",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "#f0f8ff")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "#588e8a")
+                }
+              >
+                <Card.Body>
+                  <h5>{item.title}</h5>
+                  <p style={{color:"#588e8a"}}>{item.text}</p>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+        <Row className="text-center mt-4">
+          <Col></Col>
+        </Row>
+      </Container>
+      <Container className="p-5">
+        <h2 className="text-success fw-bold">EMI Calculator</h2>
+        <Row>
+          <Col md={7}>
+            <Form>
+              <Form.Group className="mb-4">
+                <Form.Label className="fw-bold">Select the required Loan Amount</Form.Label>
+                <Form.Range min="30000" max="500000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} />
+                <div className="d-flex justify-content-between text-success">
+                  <span>₹ 30,000</span>
+                  <span className="fw-bold">₹ {loanAmount.toLocaleString()}</span>
+                  <span>₹ 5,00,000</span>
+                </div>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label className="fw-bold">Select the interest rate (p.a)</Form.Label>
+                <Form.Range min="12" max="21" value={interestRate} onChange={(e) => setInterestRate(Number(e.target.value))} />
+                <div className="d-flex justify-content-between text-success">
+                  <span>12%</span>
+                  <span className="fw-bold">{interestRate}%</span>
+                  <span>21%</span>
+                </div>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label className="fw-bold">Select EMI in Months</Form.Label>
+                <Form.Range min="12" max="48" value={tenure} onChange={(e) => setTenure(Number(e.target.value))} />
+                <div className="d-flex justify-content-between text-success">
+                  <span>12</span>
+                  <span className="fw-bold">{tenure}</span>
+                  <span>48</span>
+                </div>
+              </Form.Group>
+            </Form>
+          </Col>
+          <Col md={5}>
+            <Card className="p-4 shadow" style={{ backgroundColor: "#588e8a" }}>
+              <h5 className="fw-bold" style={{color:"white"}}>Your monthly Personal Loan EMI</h5>
+              <div className="mt-3">
+                <p><strong>Principal amount:</strong> <span className="text-dark fw-bold">₹ {loanAmount.toLocaleString()}</span></p>
+                <p><strong>Interest amount:</strong> <span className="text-dark fw-bold">₹ {totalInterest.toFixed(0)}</span></p>
+                <p><strong>Total amount payable:</strong> <span className="text-dark fw-bold">₹ {totalPayment.toFixed(0)}</span></p>
+                <p><strong>Tenure (Months):</strong> <span className="fw-bold">{tenure}</span></p>
+                <h4 className="text-white fw-bold">Monthly EMI: ₹ {emi.toFixed(0)}</h4>
+              </div>
+            </Card>
+          </Col>
+        </Row>
+
+          
+      </Container>
+
+      <Container fluid className="py-5 mt-0">
+        {" "}
+        {/* Full-width container */}
+        <h2 className="text-center mb-4 fw-bold ">FAQs</h2>
+        {faqs.map((faq, index) => (
+          <Card
+            key={index}
+            className="mb-3 border-4 shadow-sm"
+            style={{
+              transition: "all 0.3s ease-in-out",
+              borderRadius: "10px",
+              overflow: "hidden", // Ensures rounded corners are respected
+            }}
+          >
+            <Card.Header
+              className={`d-flex justify-content-between align-items-center p-3 ${openIndex === index ? "bg-light" : "bg-light"
+                }`}
+              style={{ cursor: "pointer" }}
+              onClick={() => toggleCard(index)}
+            >
+              <h6 className="mb-0 fw-bold">
+                {index + 1}. {faq.question}
+              </h6>
+              <Button variant="light" className="rounded-circle shadow-sm">
+                {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+              </Button>
+            </Card.Header>
+            {openIndex === index && (
+              <Card.Body className="px-3">
+                <p className="text-muted" style={{ fontSize: "0.9rem" }}>
+                  {faq.answer}
+                </p>
+              </Card.Body>
+            )}
+          </Card>
+        ))}
+      </Container>
+     
       <Footer />
     </>
   );
 };
 
 
-export default LoanAgainstProp;
+
+
+
+
+
+
+

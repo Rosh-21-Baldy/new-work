@@ -33,17 +33,22 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white-300 text-white rounded-lg py-8 px-6 md:p-8">
+    <div className="bg-white ">
+    <div className=" text-white rounded-lg p-4"style={{backgroundColor:"#ffffff"}}>
           <ToastContainer />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h3 className="text-2xl font-bold mb-1  text-black">
-          Drop Us a Message
-          </h3>
-          <p className="text-base text-dark-100 mb-6">
+          <div className="d-flex flex-row gap-4">
+  <div className="p-0 d-flex flex-column gap-1">
+    <h3 className="text-2xl font-bold text-black mb-1 mt-0">
+      Drop Us a Message
+    </h3>
+    <span className="text-base font-medium text-muted">
+      For Loan and Partner Query
+    </span>
+          {/* <p className="text-base text-dark-100 mb-6">
             Fill in your details, and we will call you back shortly.
-          </p>
+          </p> */}
+         
           <form onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div>
@@ -81,7 +86,7 @@ const ContactForm = () => {
                   Phone Number
                 </Label>
                 <div className="flex">
-                  <div className="bg-blue-500 border border-green-400 rounded-l-md px-3 flex items-center text-white">
+                  <div className="bg-dark border border-green-400 rounded-l-md px-3 flex items-center text-white">
                     +91
                   </div>
                   <Input
@@ -99,14 +104,14 @@ const ContactForm = () => {
                 </div>  
               </div>
               <div>
-                <button
-                  type="submit"
-                  className="bg-blue-700 text-white rounded-md py-2 px-4 text-lg font-semibold hover:bg-white-800 transition-all w-full mt-2"
-                >
-                  Submit
-                </button>
+              <button
+  type="submit"
+  className="border-2 border-success-600 text-dark rounded-md py-2 px-4 text-lg font-semibold hover:bg-success transition-all w-full mt-2">
+  Submit
+</button>
+
               </div>
-              <p className="text-sm text-danger mt-2">
+              <p className="text-sm text-dark mt-2">
                 By clicking "Submit", you agree to our{" "}
                 <Link
                   href="/term-cond"
@@ -132,16 +137,17 @@ const ContactForm = () => {
             </div>
           </form>
         </div>
-        <div className="hidden md:block">
-          <Image
-            src="https://img.freepik.com/free-vector/forms-concept-illustration_114360-4917.jpg?t=st=1743567549~exp=1743571149~hmac=87e4cefcddc0d974aefbfc2b8898c76e27011dbc08faf0a6258a3fd64092e9db&w=826"
+        <div className="hidden md:block p-3">
+          {/* <Image
+            src="https://img.freepik.com/premium-vector/hands-holding-clipboard-with-checklist-with-green-check-marks-pen-human-filling-control_625536-2138.jpg?ga=GA1.1.56492630.1742847583&semt=ais_hybrid&w=740"
             alt="Contact us illustration"
-            width={500}
+            width={550}
             height={400}
-            className="w-full h-auto"
-          />
+            className=" h-auto"
+          /> */}
         </div>
       </div>
+    </div>
     </div>
   );
 };
