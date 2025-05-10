@@ -89,4 +89,17 @@
   @apply text-base text-foreground leading-relaxed;
 }
 
+/* Optional global video styling */
+video {
+  max-width: 100%;
+  height: auto;
+  background: #000000;
+  border-radius: 0.8rem;
+}
 
+details[open] {
+  background: #fffbfb;
+  transition: all 0.3s ease;
+}
+
+  

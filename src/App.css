@@ -1,14 +1,14 @@
 .prefinn-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 2rem auto;
-    padding: 2rem;
-    background: #1679db;
+    /* padding: 2rem; */
+    /* background: #1679db; */
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   }
   
   .form-wrapper {
-    background: hwb(180 97% 2%);
+    /* background: hwb(180 97% 2%); */
     padding: 2rem;
     border-radius: 8px;
   }
@@ -80,3 +80,47 @@
     from { opacity: 0; }
     to { opacity: 1; }
   }
+
+
+  /* App.css or global.css */
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+}
+
+.marquee {
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  10% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.icon-circle {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ffc107;
+}
